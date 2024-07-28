@@ -1,11 +1,11 @@
  "use client"
 import Accordion from "@/components/Accordion/Accordion";
-import Button from "@/components/Button/Button";
-import Chackbox from "@/components/Chackbox";
+import Button from "@/components/Button/Button"; 
+import Chackbox from "@/components/Chackbox/Chackbox";
 import Spinner from "@/components/Spinner/Spinner"; 
 import { useState } from "react";
 export default function Home() {
-  const data = [
+  const datas = [
     { title: "What services do you offer?", content: "We specialize in web development, Android app development, iOS app development, and e-commerce solutions." },
     { title: "How can your services benefit my business?", content: "Our tailored solutions enhance efficiency, boost digital presence, and drive growth by meeting your specific business needs." },
     { title: "What are your payment terms?", content: "Payment terms are flexible and tailored to suit your project scope and budget. We ensure transparency and clarity in all financial matters." }
@@ -15,13 +15,34 @@ export default function Home() {
   const handleAccordionClick = (index) => {
     setOpenIndex(index === openIndex ? null : index);
   };
+  const [h, setHa] = useState([])
+  const data = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 }
+  ]
+  const multiple = (its) => {
+    if (h.length) {
+      if (h.some(item => item?.id == its.id)) {
+        const filteredItem = h.filter(item => item.id !== its.id)
+        setHa(filteredItem)
+      }
+      else {
+        setHa([...h, its])
+      }
 
+    }
+    else {
+      setHa([{ ...its }])
+    }
+  }
   return (
     <main className="f ">
         <Button/> 
         <Spinner color="green" size="lg" rounded={false}/>
         <Chackbox/> 
-        {data.map((item, index) => (
+        {datas.map((item, index) => (
           <Accordion
             key={index}
             title={item.title}
@@ -30,6 +51,9 @@ export default function Home() {
             onClick={() => handleAccordionClick(index)}
           />
         ))}
-    </main>
-  )
-}
+         {
+        data.map((ite,index) => <Chackbox key={index} checked={h.some(item => item?.id == it.id)} onChange={() => multiple(it)}
+        />)
+      }
+ </main>
+  )}
