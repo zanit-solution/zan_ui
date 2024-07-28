@@ -1,0 +1,27 @@
+
+@keyframes rotate_in {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes rotate_out {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .rotate_in {
+    animation: rotate_in 0.5s forwards;
+  }
+  
+  .rotate-out {
+    animation: rotate_out 0.5s forwards;
+  }
+  
