@@ -1,9 +1,12 @@
-import React from 'react';
+"use client"
+import Chackbox from '@/components/Chackbox/Chackbox';
+import React, { useState } from 'react';
 
-const Chacked = () => {
+const Chacked = ({}) => {
+    
   return (
     <div>
-      <h1>Chacked</h1>
+   
     </div>
   );
 };
