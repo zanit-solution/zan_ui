@@ -2,6 +2,7 @@
 import Accordion from "@/components/Accordion/Accordion";
 import Button from "@/components/Button/Button"; 
 import Chackbox from "@/components/Chackbox/Chackbox";
+import Pagination from "@/components/Pagination/Pagination";
 import Spinner from "@/components/Spinner/Spinner"; 
 import { useState } from "react";
 export default function Home() {
@@ -39,10 +40,10 @@ export default function Home() {
   }
   return (
     <main className="f ">
-        <Button/> 
-        <Spinner color="green" size="lg" rounded={false}/>
-        <Chackbox/> 
-        {datas.map((item, index) => (
+        {/* <Button/>  */}
+        {/* <Spinner color="green" size="lg" rounded={false}/> */}
+        {/* <Chackbox/>  */}
+        {/* {datas.map((item, index) => (
           <Accordion
             key={index}
             title={item.title}
@@ -50,10 +51,12 @@ export default function Home() {
             isOpen={openIndex === index}
             onClick={() => handleAccordionClick(index)}
           />
-        ))}
-         {
-        data.map((ite,index) => <Chackbox key={index} checked={h.some(item => item?.id == it.id)} onChange={() => multiple(it)}
+        ))} */}
+         {/* {
+        data.map((it,index) => <Chackbox key={index} checked={h.some(item => item?.id == it.id)} onChange={() => multiple(it)}
         />)
-      }
+      } */}
+      <Button  content="welcome" />
+      {/* <Pagination totalPage={10} page={4} limits={2} siblings={1} handleChange={()=>{}}/> */}
  </main>
   )}
