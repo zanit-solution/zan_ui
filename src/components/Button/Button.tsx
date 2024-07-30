@@ -7,7 +7,7 @@ type buttonProps = {
   fontSize?: number;
   fontWeight?: number;
   content?: string | React.ReactNode;
-};
+}& React.ButtonHTMLAttributes<HTMLButtonElement>;
 const Button = ({
   size = "md",
   rounded = "md",
@@ -33,11 +33,10 @@ const Button = ({
     xl: "rounded-xl",
     xxl: "rounded-2xl",
     full: "rounded-full",
-  }; 
-  const colorCombination = `text-[${color}] bg-[${background}] `
+  };  
   return (
     <button
-      className={`${buttonSize[size]} ${buttonRounded[rounded]} ${colorCombination} hover:opacity-95`}
+      className={`${buttonSize[size]} ${buttonRounded[rounded]}  hover:opacity-95`}
       style={{ 
         fontSize: fontSize + "px",
         fontWeight: fontWeight,
@@ -50,5 +49,7 @@ const Button = ({
     </button>
   );
 };
+
+
 
 export default Button;

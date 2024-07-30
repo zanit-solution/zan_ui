@@ -56,7 +56,8 @@ export default function Home() {
         data.map((it,index) => <Chackbox key={index} checked={h.some(item => item?.id == it.id)} onChange={() => multiple(it)}
         />)
       } */}
-      <Button  content="welcome" />
+      <Button  content="welcome"  />
+     
       {/* <Pagination totalPage={10} page={4} limits={2} siblings={1} handleChange={()=>{}}/> */}
  </main>
   )}
